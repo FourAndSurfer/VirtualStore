@@ -60,15 +60,18 @@ public class ItensActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Produto produto = (Produto) parent.getItemAtPosition(position);
 
+
                 //ao clicar no produto, adiciona ou remove o produto do carrinho
                 if(produtoEstaNoCarrinho(produto)){
                     carrinho.remove(produto);
                     Mensagem(produto.getTitle().toString() +" removido do carrinho");
+                    parent.getChildAt(position).setBackgroundColor(Color.WHITE);
                 }else{
                     carrinho.add(produto);
                     Mensagem(produto.getTitle().toString() +" adicionado ao carrinho");
+                    parent.getChildAt(position).setBackgroundColor(Color.LTGRAY);
                 }
-                //falta fazer a indicação visual de que o produto está no carrinho
+                
 
 
 //                Intent it = new Intent();
