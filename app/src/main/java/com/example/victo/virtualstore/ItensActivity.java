@@ -59,6 +59,8 @@ public class ItensActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Produto produto = (Produto) parent.getItemAtPosition(position);
+
+                //ao clicar no produto, adiciona ou remove o produto do carrinho
                 if(produtoEstaNoCarrinho(produto)){
                     carrinho.remove(produto);
                     Mensagem(produto.getTitle().toString() +" removido do carrinho");
@@ -66,7 +68,7 @@ public class ItensActivity extends AppCompatActivity {
                     carrinho.add(produto);
                     Mensagem(produto.getTitle().toString() +" adicionado ao carrinho");
                 }
-
+                //falta fazer a indicação visual de que o produto está no carrinho
 
 
 //                Intent it = new Intent();
@@ -80,7 +82,7 @@ public class ItensActivity extends AppCompatActivity {
 
 
     }
-
+    //método para verificar se o produto esta no carrinho
     public Boolean produtoEstaNoCarrinho(Produto produto){
         for(int i = 0;  i <= carrinho.size()-1 ; i++){
 
@@ -90,7 +92,7 @@ public class ItensActivity extends AppCompatActivity {
         }
         return false;
     }
-
+    // metodo para exibir uma mensagem no Toast
     public void Mensagem(String msg){
         Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
     }
