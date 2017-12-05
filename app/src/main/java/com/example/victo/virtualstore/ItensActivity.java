@@ -1,10 +1,15 @@
 package com.example.victo.virtualstore;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,6 +29,7 @@ public class ItensActivity extends AppCompatActivity {
 
 
     ArrayList<Produto> arrayList;
+    ArrayList<Produto> carrinho;
     ListView lv;
     TextView tvVoltar;
 
@@ -35,6 +41,7 @@ public class ItensActivity extends AppCompatActivity {
         setContentView(R.layout.activity_itens);
 
         arrayList = new ArrayList<>();
+        carrinho = new ArrayList<>();
 
         lv = (ListView) findViewById(R.id.listItens);
 
@@ -47,21 +54,45 @@ public class ItensActivity extends AppCompatActivity {
         });
 
 
-        /*
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Produto produto = (Produto) parent.getItemAtPosition(position);
-                Intent it = new Intent();
-                it.putExtra("produto",produto);
-                it.setClass(getApplicationContext(),CarrinhoActivity.class);
-                startActivity(it);
+                if(produtoEstaNoCarrinho(produto)){
+                    carrinho.remove(produto);
+                    Mensagem(produto.getTitle().toString() +" removido do carrinho");
+                }else{
+                    carrinho.add(produto);
+                    Mensagem(produto.getTitle().toString() +" adicionado ao carrinho");
+                }
+
+
+
+//                Intent it = new Intent();
+//                it.putExtra("produto",produto);
+//                it.setClass(getApplicationContext(),CarrinhoActivity.class);
+//                startActivity(it);
 
             }
-        });*/
+        });
 
 
 
+    }
+
+    public Boolean produtoEstaNoCarrinho(Produto produto){
+        for(int i = 0;  i <= carrinho.size()-1 ; i++){
+
+            if (carrinho.get(i).getTitle().toString().equals(produto.getTitle().toString())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void Mensagem(String msg){
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
     }
 
     class ReadJson extends AsyncTask<String, Integer, String> {
