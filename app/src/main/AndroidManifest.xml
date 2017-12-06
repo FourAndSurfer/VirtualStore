@@ -26,7 +26,17 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.victo.virtualstore.MainActivity" />
+                android:value="com.example.victo.virtualstore.MainActivity"
+                />
+        </activity>
+        <activity
+            android:name=".CarrinhoActivity"
+            android:label="Carrinho"
+            android:parentActivityName=".ItensActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.victo.virtualstore.ItensActivity" />
         </activity>
     </application>
 

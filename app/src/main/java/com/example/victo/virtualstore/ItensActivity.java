@@ -1,6 +1,5 @@
 package com.example.victo.virtualstore;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -74,9 +73,9 @@ public class ItensActivity extends AppCompatActivity {
                 
 
 
-//                Intent it = new Intent();
-//                it.putExtra("produto",produto);
-//                it.setClass(getApplicationContext(),CarrinhoActivity.class);
+     //           Intent it = new Intent();
+   //             it.putExtra("produto",produto);
+  //              it.setClass(getApplicationContext(),CarrinhoActivity.class);
 //                startActivity(it);
 
             }
