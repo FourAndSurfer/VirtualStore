@@ -3,11 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/VirtualStore.iml" filepath="$PROJECT_DIR$/VirtualStore.iml" />
-      <module fileurl="file://C:\Users\victo\AndroidStudioProjects\VirtualStore\VirtualStore.iml" filepath="C:\Users\victo\AndroidStudioProjects\VirtualStore\VirtualStore.iml" />
-      <module fileurl="file://C:\workspace\VirtualStore\VirtualStore.iml" filepath="C:\workspace\VirtualStore\VirtualStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\victo\AndroidStudioProjects\VirtualStore\app\app.iml" filepath="C:\Users\victo\AndroidStudioProjects\VirtualStore\app\app.iml" />
-      <module fileurl="file://C:\workspace\VirtualStore\app\app.iml" filepath="C:\workspace\VirtualStore\app\app.iml" />
     </modules>
   </component>
 </project>

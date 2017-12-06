@@ -48,10 +48,10 @@ public class ListAdapter extends ArrayAdapter<Produto> {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewProduct);
         Picasso.with(context).load(produto.getImage()).into(imageView);
 
-        TextView txtTitle = (TextView) convertView.findViewById(R.id.titleCarrinho);
+        TextView txtTitle = (TextView) convertView.findViewById(R.id.txtNome);
         txtTitle.setText(produto.getTitle());
 
-        TextView txtPrice = (TextView) convertView.findViewById(R.id.etPrice);
+        TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
         txtPrice.setText(produto.getPrice());
 
         TextView txtSeller = (TextView) convertView.findViewById(R.id.txtSeller);

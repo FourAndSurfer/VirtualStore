@@ -1,6 +1,6 @@
 package com.example.victo.virtualstore;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +34,7 @@ public class ItensActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,11 +65,11 @@ public class ItensActivity extends AppCompatActivity {
                 if(produtoEstaNoCarrinho(produto)){
                     carrinho.remove(produto);
                     Mensagem(produto.getTitle().toString() +" removido do carrinho");
-                    parent.getChildAt(position).setBackgroundColor(Color.WHITE);
+                //    parent.getChildAt(position).setBackgroundColor(Color.WHITE);
                 }else{
                     carrinho.add(produto);
                     Mensagem(produto.getTitle().toString() +" adicionado ao carrinho");
-                    parent.getChildAt(position).setBackgroundColor(Color.LTGRAY);
+                 //   parent.getChildAt(position).setBackgroundColor(Color.LTGRAY);
                 }
                 
 
@@ -156,6 +157,12 @@ public class ItensActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return content.toString();
+    }
+
+    public void irCarrinho(View v){
+        Intent i = new Intent(ItensActivity.this, CarrinhoActivity.class);
+        i.putExtra("carrinho",carrinho);
+        startActivity(i);
     }
 
 }
