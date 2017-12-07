@@ -30,7 +30,7 @@ public class PagamentoActivity extends AppCompatActivity {
 
         btComprar = (Button) findViewById(R.id.btComprar);
         etNome = (EditText) findViewById(R.id.etNome);
-        etNumCartao4 = (EditText) findViewById(R.id.etNumCartao4);
+        etNumCartao4 = (EditText) findViewById(R.id.creditCardEditText);
         tvTotal = (TextView) findViewById(R.id.tvTotal);
 
         Intent it = getIntent();

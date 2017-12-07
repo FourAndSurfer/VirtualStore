@@ -8,4 +8,18 @@
     <string name="total_value_text_view">$ 1,0000.23</string>
     <string name="pay_button">Pagar</string>
     <string name="total_text_view">Total:</string>
+    <string name="credit_card_placeholder_edit_text">4111 1111 1111 1111</string>
+    <string name="cc_name_text_view">Nome no Cartão</string>
+    <string name="cc_placeholder_edit_text">João da Silva</string>
+    <string name="cc_number_text_view">Número do Cartão</string>
+    <string name="cvv_text_view">CVV</string>
+    <string name="cvv_placeholder_edit_text">123</string>
+    <string name="date_separator">/</string>
+    <string name="cc_expire_date_text_view">Data do Vencimento</string>
+    <string name="month_hint">12</string>
+    <string name="year_hint">21</string>
+    <string name="valor_total">Valor Total:</string>
+    <string name="valor_em_cash">$ 1.000,00</string>
+    <string name="buy_button">Comprar</string>
+    <string name="list_transactions">Listar Transações</string>
 </resources>
