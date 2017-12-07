@@ -30,7 +30,7 @@ public class BancoAdapter extends ArrayAdapter<ItensBanco> {
 
     }
 
-    @Override
+    @Overriden
     public View getView (int position, View convertView, ViewGroup parent){
 
         if(convertView == null){
@@ -45,13 +45,13 @@ public class BancoAdapter extends ArrayAdapter<ItensBanco> {
 
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.txtNome);
-        txtTitle.setText(produto.getNome());
+        if (produto.getNome() != null) { txtTitle.setText(produto.getNome()); }
 
         TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
-        txtPrice.setText(produto.getPrice());
+        if (produto.getPrice() != null) { txtPrice.setText(produto.getPrice()); }
 
         TextView txtCartao = (TextView) convertView.findViewById(R.id.txtCartao);
-        txtCartao.setText(produto.getCartao());
+        if (produto.getCartao() != null) { txtCartao.setText(produto.getCartao()); }
 
         return convertView;
     }

@@ -35,7 +35,7 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_cart_white"
+        app:srcCompat="@drawable/ic_cart"
         tools:targetApi="lollipop"
         android:layout_marginRight="20dp" />
 
@@ -48,9 +48,9 @@
         android:elevation="7dp"
         android:text="0"
         android:background="@drawable/rounded_corner"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintTop_toTopOf="@+id/fab"
         app:layout_constraintLeft_toLeftOf="@+id/fab"
         tools:layout_editor_absoluteX="320dp"

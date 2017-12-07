@@ -2,12 +2,15 @@ package com.example.victo.virtualstore;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Date;
 
 public class PagamentoActivity extends AppCompatActivity {
 
@@ -16,7 +19,7 @@ public class PagamentoActivity extends AppCompatActivity {
     private Button btComprar;
     private Product item = new Product();
     private DBHelper dh;
-    private EditText etNome,etNumCartao4,etNumCartao1,etNumCartao2,etNumCartao3,etCvv,etMes,etAno;
+    private EditText etNome, creditCard, cvv, expMonth, expYear;
 
 
     public static final String EXTRA_REPLY = "com.example.victo.virtualstore.extra.REPLY";
@@ -30,7 +33,10 @@ public class PagamentoActivity extends AppCompatActivity {
 
         btComprar = (Button) findViewById(R.id.btComprar);
         etNome = (EditText) findViewById(R.id.etNome);
-        etNumCartao4 = (EditText) findViewById(R.id.creditCardEditText);
+        creditCard = (EditText) findViewById(R.id.creditCardEditText);
+        cvv = findViewById(R.id.etCvv);
+        expMonth = findViewById(R.id.etMes);
+        expYear = findViewById(R.id.etAno);
         tvTotal = (TextView) findViewById(R.id.tvTotal);
 
         Intent it = getIntent();
@@ -42,30 +48,47 @@ public class PagamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                if(etNome.getText().length()>0 && tvTotal.getText().length()>0 && etNumCartao4.getText().length()>0){
-                    dh.insert(etNome.getText().toString(), tvTotal.getText().toString(), etNumCartao4.getText().toString());
+                String errorMessage = validateFields();
+                if (errorMessage == null) {
+                    dh.insert(etNome.getText().toString(), tvTotal.getText().toString(), creditCard.getText().toString());
                     AlertDialog.Builder adb = new AlertDialog.Builder(PagamentoActivity.this);
                     adb.setTitle("Sucesso");
                     adb.setMessage("Comprado com Sucesso!");
                     adb.show();
 
-                    etNome.setText(" ");
-                    etNumCartao1.setText(" ");
-                    etNumCartao2.setText(" ");
-                    etNumCartao3.setText(" ");
-                    etNumCartao4.setText(" ");
-                    etCvv.setText(" ");
-                    etMes.setText(" ");
-                    etAno.setText(" ");
+                    etNome.setText(null);
+                    creditCard.setText(null);
+                    cvv.setText(null);
+                    expMonth.setText(null);
+                    expYear.setText(null);
                 }
                 else {
                     AlertDialog.Builder adb = new AlertDialog.Builder(PagamentoActivity.this);
                     adb.setTitle("Erro");
-                    adb.setMessage("Todo os campos devem ser preenchidos!");
+                    adb.setMessage(errorMessage);
                     adb.show();
                 }
             }
         });
+    }
+
+    @Nullable
+    private String validateFields() {
+        StringBuilder message = new StringBuilder();
+
+        if (!(this.etNome.getText().length() > 0)) { message.append("Favor preencher o nome.\n"); }
+        if (!(this.tvTotal.getText().length() > 0)) { message.append("Valor não pode ser 0!\n"); }
+        if (this.creditCard.getText().length() != 16) { message.append("Cartão inválido.\n"); }
+        if (this.cvv.getText().length() != 3) { message.append("CVV incorreto.\n"); }
+
+        try {
+            if (Integer.parseInt(this.expMonth.getText().toString()) > 31) { message.append("Mês inválido.\n"); }
+            if (Integer.parseInt(this.expYear.getText().toString()) < 18) { message.append("Ano inválido.\n"); }
+        } catch (Exception ex) {
+            message.append("É necessário preencher a data de validade do cartão.\n");
+        }
+
+        return message.toString().isEmpty() ? null : message.toString();
     }
 
     public void btnlistar(View v){
