@@ -41,7 +41,7 @@ public class PagamentoActivity extends AppCompatActivity {
 
         Intent it = getIntent();
         total = (Double) it.getSerializableExtra("total");
-        tvTotal.setText(total.toString());
+        tvTotal.setText(CurrencyHelper.parseDoubleToCurrency(total));
 
 
         btComprar.setOnClickListener(new View.OnClickListener() {
