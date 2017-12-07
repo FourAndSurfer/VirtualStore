@@ -33,16 +33,16 @@ public class CarrinhoActivity extends AppCompatActivity {
         valorTotal();
     }
 
-    public void valorTotal(){
+    public void valorTotal() {
         totalTV = (TextView) findViewById(R.id.ValorTV);
 
-        for(int i=0; i <= carrinho.size()-1; i++){
-            total += Double.parseDouble(carrinho.get(i).getPrice());
+        for(int i=0; i <= carrinho.size()-1; i++) {
+            total += carrinho.get(i).getPrice();
         }
-        totalTV.setText(total.toString());
+        totalTV.setText(CurrencyHelper.parseDoubleToCurrency(total));
     }
 
-    public void telaPagamento (View v){
+    public void telaPagamento (View v) {
         Intent i = new Intent(CarrinhoActivity.this, PagamentoActivity.class);
         i.putExtra("total",total);
         startActivity(i);

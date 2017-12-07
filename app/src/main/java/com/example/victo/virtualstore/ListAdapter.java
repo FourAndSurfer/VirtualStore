@@ -52,7 +52,7 @@ public class ListAdapter extends ArrayAdapter<Product> {
         txtTitle.setText(product.getTitle());
 
         TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
-        txtPrice.setText(product.getPrice());
+        txtPrice.setText(product.getFormattedPrice());
 
         TextView txtSeller = (TextView) convertView.findViewById(R.id.txtSeller);
         txtSeller.setText(product.getSeller());

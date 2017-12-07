@@ -9,20 +9,14 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
 
-    public Product() {
-
-    }
-
+    public Product() { }
 
     private String image;
     private String title;
-    private String price;
+    private Double price;
     private String zipCode;
     private String seller;
     private String date;
-
-
-
 
 
     public String getImage() {
@@ -41,12 +35,16 @@ public class Product implements Serializable {
         this.title = title;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
+    public String getFormattedPrice() {
+        return CurrencyHelper.parseDoubleToCurrency(this.price);
+    }
+
     public void setPrice(String price) {
-        this.price = price;
+        this.price = Double.parseDouble(price)/100;
     }
 
     public String getZipCode() {
