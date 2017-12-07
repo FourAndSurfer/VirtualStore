@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +16,8 @@ public class CarrinhoActivity extends AppCompatActivity {
     ListView carrinholv;
     Double total;
     TextView totalTV;
+    TextView addItemsToCartMessage;
+    Button goToPaymentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,13 @@ public class CarrinhoActivity extends AppCompatActivity {
         );
         carrinholv.setAdapter(adapter);
         valorTotal();
+
+        if (carrinho.size() < 1) {
+            this.addItemsToCartMessage = findViewById(R.id.addItemsToCartMessage);
+            this.addItemsToCartMessage.setVisibility(View.VISIBLE);
+            this.goToPaymentButton = findViewById(R.id.btnPagar);
+            this.goToPaymentButton.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void valorTotal() {

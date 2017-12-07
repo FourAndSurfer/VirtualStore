@@ -22,4 +22,5 @@
     <string name="valor_em_cash">$ 1.000,00</string>
     <string name="buy_button">Comprar</string>
     <string name="list_transactions">Listar Transações</string>
+    <string name="add_cart_items_text_view">Adicione itens no carrinho!</string>
 </resources>
