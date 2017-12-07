@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,14 +18,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="498dp"
-        android:text="Button"
-        android:onClick="irCarrinho"/>
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="0dp"
+        android:onClick="irCarrinho"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorAccent"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_cart_white"
+        tools:targetApi="lollipop"
+        android:layout_marginRight="20dp" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/cartQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:elevation="7dp"
+        android:text="0"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/fab"
+        app:layout_constraintLeft_toLeftOf="@+id/fab"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="439dp"
+        tools:targetApi="lollipop"
+        android:layout_alignParentEnd="true" />
+
+</android.support.constraint.ConstraintLayout>

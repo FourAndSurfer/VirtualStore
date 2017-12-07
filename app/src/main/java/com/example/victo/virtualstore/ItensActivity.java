@@ -31,6 +31,7 @@ public class ItensActivity extends AppCompatActivity {
     ArrayList<Product> carrinho;
     ListView lv;
     TextView tvVoltar;
+    private TextView cartQty;
 
 
 
@@ -44,6 +45,8 @@ public class ItensActivity extends AppCompatActivity {
         carrinho = new ArrayList<>();
 
         lv = (ListView) findViewById(R.id.listItens);
+
+        this.cartQty = findViewById(R.id.cartQty);
 
         //Código para Url que vem o Json usado
         runOnUiThread(new Runnable() {
@@ -62,16 +65,25 @@ public class ItensActivity extends AppCompatActivity {
 
 
                 //ao clicar no product, adiciona ou remove o product do carrinho
-                if(produtoEstaNoCarrinho(product)){
+                if(produtoEstaNoCarrinho(product)) {
                     carrinho.remove(product);
-                    Mensagem(product.getTitle().toString() +" removido do carrinho");
+
+//                    Mensagem(product.getTitle().toString() +" removido do carrinho");
                 //    parent.getChildAt(position).setBackgroundColor(Color.WHITE);
-                }else{
+                } else {
                     carrinho.add(product);
-                    Mensagem(product.getTitle().toString() +" adicionado ao carrinho");
+//                    Mensagem(product.getTitle().toString() +" adicionado ao carrinho");
                  //   parent.getChildAt(position).setBackgroundColor(Color.LTGRAY);
                 }
-                
+
+                Integer cartSize = carrinho.size();
+                if (cartSize > 0) {
+                    cartQty.setText(String.valueOf(cartSize));
+                    cartQty.setVisibility(View.VISIBLE);
+                } else {
+                    cartQty.setText("0");
+                    cartQty.setVisibility(View.INVISIBLE);
+                }
 
 
      //           Intent it = new Intent();
@@ -85,6 +97,7 @@ public class ItensActivity extends AppCompatActivity {
 
 
     }
+
     //método para verificar se o product esta no carrinho
     public Boolean produtoEstaNoCarrinho(Product product){
         for(int i = 0;  i <= carrinho.size()-1 ; i++){
