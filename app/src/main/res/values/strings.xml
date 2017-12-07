@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">VirtualStore</string>
+    <string name="app_name">Loja Virtual</string>
+    <string name="enter_store_btn">Entrar na loja</string>
+    <string name="welcome_text_view">Bem vindo!\nVamos as compras?</string>
 </resources>
