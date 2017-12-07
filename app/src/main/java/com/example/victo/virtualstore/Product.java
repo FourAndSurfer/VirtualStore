@@ -6,10 +6,10 @@ package com.example.victo.virtualstore;
 
 import java.io.Serializable;
 
-public class Produto implements Serializable{
+public class Product implements Serializable {
 
 
-    public Produto() {
+    public Product() {
 
     }
 
@@ -17,7 +17,7 @@ public class Produto implements Serializable{
     private String image;
     private String title;
     private String price;
-    private String zipcode;
+    private String zipCode;
     private String seller;
     private String date;
 
@@ -49,12 +49,12 @@ public class Produto implements Serializable{
         this.price = price;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getSeller() {

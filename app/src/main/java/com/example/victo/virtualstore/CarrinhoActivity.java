@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CarrinhoActivity extends AppCompatActivity {
 
-    ArrayList<Produto> carrinho;
+    ArrayList<Product> carrinho;
     ListView carrinholv;
     Double total;
     TextView totalTV;
@@ -24,7 +24,7 @@ public class CarrinhoActivity extends AppCompatActivity {
         carrinholv = (ListView) findViewById(R.id.CarrinhoLV);
 
         Intent it = getIntent();
-        carrinho = (ArrayList<Produto>) it.getSerializableExtra("carrinho");
+        carrinho = (ArrayList<Product>) it.getSerializableExtra("carrinho");
 
         ListAdapter adapter = new ListAdapter(
                 getApplicationContext(), R.layout.custom_carrinho_layout, carrinho

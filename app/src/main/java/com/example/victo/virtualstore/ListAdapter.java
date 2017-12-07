@@ -17,17 +17,17 @@ import java.util.ArrayList;
  * Created by victo on 13/11/2017.
  */
 
-public class ListAdapter extends ArrayAdapter<Produto> {
+public class ListAdapter extends ArrayAdapter<Product> {
 
 
-    ArrayList<Produto> produtos;
+    ArrayList<Product> products;
     Context context;
     int resource;
 
 
-    public ListAdapter(Context context, int resource, ArrayList<Produto> produtos) {
-        super(context, resource, produtos);
-        this.produtos = produtos;
+    public ListAdapter(Context context, int resource, ArrayList<Product> products) {
+        super(context, resource, products);
+        this.products = products;
         this.context = context;
         this. resource = resource;
 
@@ -43,19 +43,19 @@ public class ListAdapter extends ArrayAdapter<Produto> {
         }
 
 
-        Produto produto = getItem(position);
+        Product product = getItem(position);
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewProduct);
-        Picasso.with(context).load(produto.getImage()).into(imageView);
+        Picasso.with(context).load(product.getImage()).into(imageView);
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.txtNome);
-        txtTitle.setText(produto.getTitle());
+        txtTitle.setText(product.getTitle());
 
         TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
-        txtPrice.setText(produto.getPrice());
+        txtPrice.setText(product.getPrice());
 
         TextView txtSeller = (TextView) convertView.findViewById(R.id.txtSeller);
-        txtSeller.setText(produto.getSeller());
+        txtSeller.setText(product.getSeller());
 
         return convertView;
     }

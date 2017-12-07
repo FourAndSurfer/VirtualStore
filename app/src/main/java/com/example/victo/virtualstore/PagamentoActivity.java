@@ -14,7 +14,7 @@ public class PagamentoActivity extends AppCompatActivity {
     private Double total;
     private TextView tvTotal;
     private Button btComprar;
-    private Produto item = new Produto();
+    private Product item = new Product();
     private DBHelper dh;
     private EditText etNome,etNumCartao4,etNumCartao1,etNumCartao2,etNumCartao3,etCvv,etMes,etAno;
 

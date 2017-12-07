@@ -24,11 +24,11 @@ public class ItensActivity extends AppCompatActivity {
 
 
     public static final int TEXT_REQUEST = 1;
-    ArrayList<Produto> produtosSelecionados;
+    ArrayList<Product> produtosSelecionados;
 
 
-    ArrayList<Produto> arrayList;
-    ArrayList<Produto> carrinho;
+    ArrayList<Product> arrayList;
+    ArrayList<Product> carrinho;
     ListView lv;
     TextView tvVoltar;
 
@@ -58,24 +58,24 @@ public class ItensActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Produto produto = (Produto) parent.getItemAtPosition(position);
+                Product product = (Product) parent.getItemAtPosition(position);
 
 
-                //ao clicar no produto, adiciona ou remove o produto do carrinho
-                if(produtoEstaNoCarrinho(produto)){
-                    carrinho.remove(produto);
-                    Mensagem(produto.getTitle().toString() +" removido do carrinho");
+                //ao clicar no product, adiciona ou remove o product do carrinho
+                if(produtoEstaNoCarrinho(product)){
+                    carrinho.remove(product);
+                    Mensagem(product.getTitle().toString() +" removido do carrinho");
                 //    parent.getChildAt(position).setBackgroundColor(Color.WHITE);
                 }else{
-                    carrinho.add(produto);
-                    Mensagem(produto.getTitle().toString() +" adicionado ao carrinho");
+                    carrinho.add(product);
+                    Mensagem(product.getTitle().toString() +" adicionado ao carrinho");
                  //   parent.getChildAt(position).setBackgroundColor(Color.LTGRAY);
                 }
                 
 
 
      //           Intent it = new Intent();
-   //             it.putExtra("produto",produto);
+   //             it.putExtra("product",product);
   //              it.setClass(getApplicationContext(),CarrinhoActivity.class);
 //                startActivity(it);
 
@@ -85,11 +85,11 @@ public class ItensActivity extends AppCompatActivity {
 
 
     }
-    //método para verificar se o produto esta no carrinho
-    public Boolean produtoEstaNoCarrinho(Produto produto){
+    //método para verificar se o product esta no carrinho
+    public Boolean produtoEstaNoCarrinho(Product product){
         for(int i = 0;  i <= carrinho.size()-1 ; i++){
 
-            if (carrinho.get(i).getTitle().toString().equals(produto.getTitle().toString())){
+            if (carrinho.get(i).getTitle().toString().equals(product.getTitle().toString())){
                 return true;
             }
         }
@@ -116,16 +116,16 @@ public class ItensActivity extends AppCompatActivity {
 
                 for (int i = 0; i < arrayjson.length(); i++) {
                     JSONObject productObject = arrayjson.getJSONObject(i);
-                    Produto produto = new Produto();
+                    Product product = new Product();
 
-                    produto.setTitle(productObject.getString("title"));
-                    produto.setPrice(productObject.getString("price"));
-                    produto.setZipcode(productObject.getString("zipcode"));
-                    produto.setSeller(productObject.getString("seller"));
-                    produto.setImage(productObject.getString("thumbnailHd"));
-                    produto.setDate(productObject.getString("date"));
+                    product.setTitle(productObject.getString("title"));
+                    product.setPrice(productObject.getString("price"));
+                    product.setZipCode(productObject.getString("zipcode"));
+                    product.setSeller(productObject.getString("seller"));
+                    product.setImage(productObject.getString("thumbnailHd"));
+                    product.setDate(productObject.getString("date"));
 
-                    arrayList.add(produto);
+                    arrayList.add(product);
 
                 }
             } catch (JSONException e) {
