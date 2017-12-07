@@ -2,4 +2,7 @@
     <string name="app_name">Loja Virtual</string>
     <string name="enter_store_btn">Entrar na loja</string>
     <string name="welcome_text_view">Bem vindo!\nVamos as compras?</string>
+    <string name="product_name_text_view">Nome do Produto</string>
+    <string name="price_text_view">Preço</string>
+    <string name="seller_text_view">Vendedor</string>
 </resources>
