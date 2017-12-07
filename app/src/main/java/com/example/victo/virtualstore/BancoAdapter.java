@@ -36,7 +36,7 @@ public class BancoAdapter extends ArrayAdapter<ItensBanco> {
         if(convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater) getContext()
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.custom_list_layout, null, true);
+            convertView = layoutInflater.inflate(R.layout.custom_transacoes_layout, null, true);
         }
 
 
