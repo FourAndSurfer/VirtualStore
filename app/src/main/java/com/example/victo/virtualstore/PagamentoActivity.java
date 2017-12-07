@@ -82,7 +82,7 @@ public class PagamentoActivity extends AppCompatActivity {
         if (this.cvv.getText().length() != 3) { message.append("CVV incorreto.\n"); }
 
         try {
-            if (Integer.parseInt(this.expMonth.getText().toString()) > 31) { message.append("Mês inválido.\n"); }
+            if (Integer.parseInt(this.expMonth.getText().toString()) > 12) { message.append("Mês inválido.\n"); }
             if (Integer.parseInt(this.expYear.getText().toString()) < 18) { message.append("Ano inválido.\n"); }
         } catch (Exception ex) {
             message.append("É necessário preencher a data de validade do cartão.\n");
