@@ -51,7 +51,7 @@ public class BancoAdapter extends ArrayAdapter<ItensBanco> {
         if (produto.getPrice() != null) { txtPrice.setText(produto.getPrice()); }
 
         TextView txtCartao = (TextView) convertView.findViewById(R.id.txtCartao);
-        if (produto.getCartao() != null) { txtCartao.setText(produto.getCartao()); }
+        if (produto.getCartao() != null) { txtCartao.setText("**** **** **** " + produto.getCartao()); }
 
         return convertView;
     }

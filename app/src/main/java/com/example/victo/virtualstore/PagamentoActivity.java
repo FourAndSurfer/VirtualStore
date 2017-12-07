@@ -50,7 +50,7 @@ public class PagamentoActivity extends AppCompatActivity {
             {
                 String errorMessage = validateFields();
                 if (errorMessage == null) {
-                    dh.insert(tvTotal.getText().toString(), etNome.getText().toString(), creditCard.getText().toString().substring(11));
+                    dh.insert(tvTotal.getText().toString(), etNome.getText().toString(), creditCard.getText().toString().substring(12));
                     AlertDialog.Builder adb = new AlertDialog.Builder(PagamentoActivity.this);
                     adb.setTitle("Sucesso");
                     adb.setMessage("Comprado com Sucesso!");
