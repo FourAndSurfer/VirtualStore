@@ -5,4 +5,7 @@
     <string name="product_name_text_view">Nome do Produto</string>
     <string name="price_text_view">Preço</string>
     <string name="seller_text_view">Vendedor</string>
+    <string name="total_value_text_view">$ 1,0000.23</string>
+    <string name="pay_button">Pagar</string>
+    <string name="total_text_view">Total:</string>
 </resources>
