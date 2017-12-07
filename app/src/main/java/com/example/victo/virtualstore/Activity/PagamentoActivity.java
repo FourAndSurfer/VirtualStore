@@ -1,4 +1,4 @@
-package com.example.victo.virtualstore;
+package com.example.victo.virtualstore.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.victo.virtualstore.HELPER.CurrencyHelper;
+import com.example.victo.virtualstore.HELPER.DBHelper;
+import com.example.victo.virtualstore.Entitie.Product;
+import com.example.victo.virtualstore.R;
 
 public class PagamentoActivity extends AppCompatActivity {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.victo.virtualstore.CarrinhoActivity">
+    tools:context="com.example.victo.virtualstore.Activity.CarrinhoActivity">
 
     <ListView
         android:id="@+id/CarrinhoLV"

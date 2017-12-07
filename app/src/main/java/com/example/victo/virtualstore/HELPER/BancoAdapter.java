@@ -1,4 +1,4 @@
-package com.example.victo.virtualstore;
+package com.example.victo.virtualstore.HELPER;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.victo.virtualstore.Entitie.ItensBanco;
+import com.example.victo.virtualstore.R;
 
 import java.util.List;
 

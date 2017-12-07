@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,31 +21,31 @@
         </activity>
         <!-- Activity Itens e voltando para Activity Main -->
         <activity
-            android:name=".ItensActivity"
+            android:name=".Activity.ItensActivity"
             android:label="Itens da Loja"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.victo.virtualstore.MainActivity" />
+                android:value="com.example.victo.virtualstore.Activity.MainActivity" />
         </activity>
         <!-- Carrinho para Itens -->
         <activity
-            android:name=".CarrinhoActivity"
+            android:name=".Activity.CarrinhoActivity"
             android:label="Carrinho"
-            android:parentActivityName=".ItensActivity">
+            android:parentActivityName=".Activity.ItensActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.victo.virtualstore.ItensActivity" />
+                android:value="com.example.victo.virtualstore.Activity.ItensActivity" />
         </activity>
         <activity
-            android:name=".PagamentoActivity"
+            android:name=".Activity.PagamentoActivity"
             android:label="Pagamento"
-            android:parentActivityName=".ItensActivity">
+            android:parentActivityName=".Activity.ItensActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.victo.virtualstore.ItensActivity" />
+                android:value="com.example.victo.virtualstore.Activity.ItensActivity" />
         </activity>
-        <activity android:name=".TransacoesActivity"></activity>
+        <activity android:name=".Activity.TransacoesActivity"></activity>
     </application>
 
 </manifest>

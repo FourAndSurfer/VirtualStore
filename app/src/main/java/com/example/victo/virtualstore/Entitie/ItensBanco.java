@@ -1,4 +1,4 @@
-package com.example.victo.virtualstore;
+package com.example.victo.virtualstore.Entitie;
 
 /**
  * Created by victo on 06/12/2017.

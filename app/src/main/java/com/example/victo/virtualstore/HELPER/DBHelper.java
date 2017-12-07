@@ -1,10 +1,12 @@
-package com.example.victo.virtualstore;
+package com.example.victo.virtualstore.HELPER;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+
+import com.example.victo.virtualstore.Entitie.ItensBanco;
 
 import java.util.ArrayList;
 import java.util.List;
