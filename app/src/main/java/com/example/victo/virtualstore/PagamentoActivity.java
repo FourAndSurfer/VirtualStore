@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Date;
-
 public class PagamentoActivity extends AppCompatActivity {
 
     private Double total;
@@ -61,6 +59,8 @@ public class PagamentoActivity extends AppCompatActivity {
                     cvv.setText(null);
                     expMonth.setText(null);
                     expYear.setText(null);
+
+                    telaInicial();
                 }
                 else {
                     AlertDialog.Builder adb = new AlertDialog.Builder(PagamentoActivity.this);
@@ -91,8 +91,12 @@ public class PagamentoActivity extends AppCompatActivity {
         return message.toString().isEmpty() ? null : message.toString();
     }
 
-    public void btnlistar(View v){
-        Intent i = new Intent(PagamentoActivity.this, TransacoesActivity.class);
+
+    public void telaInicial(){
+
+        Intent i = new Intent(PagamentoActivity.this, MainActivity.class);
         startActivity(i);
+        finish();
+
     }
 }

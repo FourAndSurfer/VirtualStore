@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
         btItens  = (Button) findViewById(R.id.btItens);
     }
 
+    public void btnlistar(View v){
+        Intent i = new Intent(MainActivity.this, TransacoesActivity.class);
+        startActivity(i);
+    }
+
     //Ir para tela iten
     public void telaItem (View V){
         Intent intent = new Intent(MainActivity.this, ItensActivity.class);
